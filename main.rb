@@ -2,19 +2,19 @@ require 'pry'
 require 'colorize'
 
 def check_palindrome(input)
-  @palindromic = nil
   if input[0] == input[-1] && input[1] == input[-2]
-    @palindromic = true
+    return true
   else
-    @palindromic = false
+    return false
   end
 end
 
 def menu
   puts "Enter a word:"
-    input = gets.chomp.downcase
+  input = gets.chomp.downcase
   check_palindrome(input)
-  if @palindromic == true
+  palindromic = check_palindrome(input)
+  if palindromic == true
     puts "Word is palindromic".colorize(:green)
   else 
     puts "Word is non-palindromic".colorize(:red)
